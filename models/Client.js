@@ -79,44 +79,16 @@ var clientSchema = new Schema({
     }
 });
 
-clientSchema.methods.updateStatus = function(newStatus, callback){
+clientSchema.methods.updateStatus = function(newStatus){
     var that = this;
     that.conv_status = newStatus;
-    that.save(callback);
 }
 
-clientSchema.methods.initOrder = function(callback){
+clientSchema.methods.initOrder = function(){
     var that = this;
     that.pending_order = {};
     that.pending_order.address_proposals = [];
-    that.updateStatus("start_address", callback);
-}
-
-clientSchema.methods.newSession = function(callback){
-    var that = this;
-    Sender = Sender(that._id);
-    var message = {
-        attachment: {
-            type: "template",
-            payload: {
-                template_type: "button",
-                text: Polyglot("newSession"),
-                buttons:[{
-                    type: "postback",
-                    title: "informations",
-                    payload: "info"
-                },
-                {
-                    type: "postback",
-                    title: "Commander",
-                    payload: "new_order",
-                }]
-            }
-        }
-    };
-    that.updateStatus("new_session", function(error, client){
-        Sender(message, callback);
-    })
+    that.updateStatus("start_address");
 }
 
 var Client = mongoose.model('Client', clientSchema);

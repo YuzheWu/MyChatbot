@@ -44,7 +44,7 @@ app.post('/webhook', function (req, res) {
                     if(!error && client){
                         if (event.message && event.message.text) {
                             MessageHandler.handle(client, event.message, function(error, data){
-                                console.log("Message sent!");
+                                client.save();
                             });
                         }
                         else if (event.postback) {
