@@ -1,0 +1,12 @@
+[{
+    "name" : "trusk-bot",
+    "script": "app.js",
+    "watch": true,
+    "watch_options": {
+    "followSymlinks": true
+    },
+    "env": {
+        "NODE_ENV": "development"
+    },
+    "exec_mode"  : "fork_mode"
+}]
