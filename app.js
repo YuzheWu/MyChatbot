@@ -14,7 +14,7 @@ var PostbackHandler = require('./modules/PostbackHandler');
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
-app.listen(config.server_port);
+app.listen(process.env.PORT || config.server_port);
 
 // Server frontpage
 app.get('/', module.exports = function (req, res) {
