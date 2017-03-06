@@ -21,7 +21,7 @@ ClientCtrl.check = function(userId, callback){
                     client.first_name = body.first_name;
                     client.last_name = body.last_name;
                     client.conv_status = "inactive";
-                    client.locale = body.locale;
+                    client.locale = body.locale == 'fr_FR' ? 'fr_FR' : 'en_GB';
                     client.timezone = body.timezone;
                     client.gender = body.gender;
                     client.timestamp_last_msg = moment().unix();
