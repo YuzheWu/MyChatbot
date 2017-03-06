@@ -39,12 +39,12 @@ var Sender = function(client){
                     text: Polyglot("newSession") + " " + client.first_name,
                     buttons:[{
                         type: "postback",
-                        title: "informations",
+                        title: Polyglot("PlusInfo"),
                         payload: "info"
                     },
                     {
                         type: "postback",
-                        title: "Commander",
+                        title: Polyglot("Commander"),
                         payload: "new_order",
                     }]
                 }
@@ -513,7 +513,7 @@ var Sender = function(client){
        listItems=listItems+"\n"+items[i].quantity+" "+items[i].type;
      }
      //var détailsLivraison= Polyglot("détailsLivraison",{adDépart : client.pending_order.startAddress, adArrivee : client.pending_order.endAddress, date : client.pending_order.date, heure : client.pending_order.time});
-     var détailsLivraison=Polyglot("depart")+client.pending_order.startAddress.split(",")[0]+"\n"+Polyglot("arrivee")+client.pending_order.endAddress.split(",")[0]+"\n"/*+Polyglot("dateHeure")*/+"le "+client.pending_order.date+Polyglot("a")+client.pending_order.time;
+     var détailsLivraison=Polyglot("depart")+client.pending_order.startAddress.split(",")[0]+"\n"+Polyglot("arrivee")+client.pending_order.endAddress.split(",")[0]+"\n"/*+Polyglot("dateHeure")*/+client.pending_order.date+Polyglot("a")+client.pending_order.time;
      //var détailsFact=Polyglot("détailsFact",{prenom : client.first_name, nom : client.last_name, mailAddress : client.mailAddress});
      var détailsFact=client.first_name+" "+client.last_name+"\n"+client.mail_address+"\n"+client.phone_number;
      console.log("je lis jusqu'ici");
