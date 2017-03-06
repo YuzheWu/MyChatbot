@@ -10,7 +10,7 @@ var MessageHandler = require('./modules/MessageHandler');
 var PostbackHandler = require('./modules/PostbackHandler');
 
 // connect to database
-// mongoose.connect(config.mongo_url  + '/' + config.mongo_db);
+mongoose.connect('mongodb://heroku_j0bcvtgh:gclq1t60ndir95inkjk6bhbk7l@ds119020.mlab.com:19020/heroku_j0bcvtgh');
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
