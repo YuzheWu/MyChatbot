@@ -10,7 +10,7 @@ var MessageHandler = require('./modules/MessageHandler');
 var PostbackHandler = require('./modules/PostbackHandler');
 
 // connect to database
-mongoose.connect(config.mongo_url  + '/' + config.mongo_db);
+// mongoose.connect(config.mongo_url  + '/' + config.mongo_db);
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
