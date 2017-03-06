@@ -9,12 +9,12 @@ module.exports = {
     mongo_db : 'bot-test',
 
     // config APIs
-    key_googlemap: 'AIzaSyDaPAYeVqse7CfR6euboHdJbPWwMIn3uTU',
+    key_googlemap: , // google map API key
     url_distance: 'https://maps.googleapis.com/maps/api/distancematrix/json?',
     url_geocode: 'https://maps.googleapis.com/maps/api/geocode/json?',
     url_timezone: 'https://maps.googleapis.com/maps/api/timezone/json?',
     url_place: 'https://maps.googleapis.com/maps/api/place/autocomplete/json?',
-    key_trusk_items: '2NV2b95cM2W9aeDwzNAnnUpmGMY3EC',
+    key_trusk_items: , // trusk API key
     url_trusk_items: 'https://items.trusk.com/match?',
 
     // config urls and pictures
