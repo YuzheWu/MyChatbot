@@ -1,5 +1,5 @@
 var _ = require('lodash');
-//var moment = require('moment-timezone');
+var moment = require('moment-timezone');
 var config = require('../config');
 var async = require('async');
 var mongoose = require('mongoose');
@@ -24,6 +24,7 @@ ClientCtrl.check = function(userId, callback){
                     client.locale = body.locale;
                     client.timezone = body.timezone;
                     client.gender = body.gender;
+                    client.timestamp_last_msg = moment().unix();
                     client.save(function(err, client, numAffected) {
                         callback(null, client);
                     });

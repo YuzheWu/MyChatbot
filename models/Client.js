@@ -10,9 +10,13 @@ var itemSchema = new Schema({
 
 var orderSchema = new Schema({
     _id : String,
+    status : String,
     service_type: String,
     address_proposals : Array,
     startAddress : String,
+    startLat : Number,
+    startLng : Number,
+    startTimezone: String,
     startFloors : String,
     startElevator : Boolean,
     startSidewalk : Boolean,
@@ -25,6 +29,7 @@ var orderSchema = new Schema({
     endContact : String,
     date : String,
     time : String,
+    date_local : String,
     items : Array,
     option : String, // "trottoir_a_trottoir" or "porte_a_porte"
     twoPeople : Boolean,
@@ -39,7 +44,10 @@ var orderSchema = new Schema({
 
 var clientSchema = new Schema({
     _id: {
-        type: Number
+        type: String
+    },
+    timestamp_last_msg: {
+        type: String  // unix time in seconds
     },
     first_name: {
         type: String
@@ -88,7 +96,6 @@ clientSchema.methods.initOrder = function(){
     var that = this;
     that.pending_order = {};
     that.pending_order.address_proposals = [];
-    that.updateStatus("start_address");
 }
 
 var Client = mongoose.model('Client', clientSchema);

@@ -1,5 +1,5 @@
 [{
-    "name" : "trusk-bot",
+    "name" : "trusk-bot2",
     "script": "app.js",
     "watch": true,
     "watch_options": {
