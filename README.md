@@ -1,4 +1,4 @@
-A project realized as part of an internship at a moving service company.
+A project realized as part of an internship at a moving service company, together with another intern.
 
 This chatbot is built on top of the Messenger platform from Facebook. It guilds clients through the process of placing an order by collecting necessary information and providing price quotations.
 
